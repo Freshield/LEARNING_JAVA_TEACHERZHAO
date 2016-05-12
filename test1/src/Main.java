@@ -11,10 +11,14 @@ public class Main {
         a = 1;
 
         Scanner scanner = new Scanner(System.in);
-        int v3 = scanner.nextInt();
-        //String v4 = scanner.nextLine();
-        int v4 = scanner.nextInt();
-        System.out.println(v3+v4);
+
+//        int v3 = scanner.nextInt();
+//        //String v4 = scanner.nextLine();
+//        int v4 = scanner.nextInt();
+//        System.out.println(v3+v4);
+
+        String v5 = scanner.nextLine();
+        System.out.println(v5);
 
     }
 }
