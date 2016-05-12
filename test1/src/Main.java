@@ -16,9 +16,11 @@ public class Main {
 //        //String v4 = scanner.nextLine();
 //        int v4 = scanner.nextInt();
 //        System.out.println(v3+v4);
+//
+//        String v5 = scanner.nextLine();
+//        System.out.println(v5);
 
-        String v5 = scanner.nextLine();
-        System.out.println(v5);
+        int v9 = (int)(1 + 1.0);
 
     }
 }
