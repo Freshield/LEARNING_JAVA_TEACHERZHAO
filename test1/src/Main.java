@@ -10,7 +10,7 @@ public class Main {
         int a;
         a = 1;
 
-        //Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
 //        int v3 = scanner.nextInt();
 //        //String v4 = scanner.nextLine();
@@ -23,6 +23,21 @@ public class Main {
         int v9 = (int)(1 + 1.0);
 
         int v10 = 11 % 3;
+
+        boolean v12 = (3 > 5);
+
+        System.out.println(v12);
+
+        int va = scanner.nextInt();
+        int vb = scanner.nextInt();
+
+        if (va > vb) {
+            System.out.println("va gt vb");
+        }else {
+            System.out.println("vb gt va");
+
+        }
+
 
 
 
