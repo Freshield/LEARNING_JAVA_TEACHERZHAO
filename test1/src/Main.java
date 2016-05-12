@@ -38,10 +38,7 @@ public class Main {
 
         }
 
-
-
-
-
+        double v13 = Math.random() * 10;//[0,10)
 
 
     }
