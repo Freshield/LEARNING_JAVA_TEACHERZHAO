@@ -16,6 +16,12 @@ public class Question2 {
         }
         middleput /= 10;
         double output = middleput / 100.0;
-        System.out.println(output);
+        System.out.print(output);
+        //figure out decimal
+        if((int)(input*10) == input*10){
+            System.out.println("0");
+        }else {
+            System.out.println();
+        }
     }
 }
