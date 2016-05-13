@@ -7,7 +7,15 @@ public class Question2 {
 
     public static void main(String[] args) {
 
+        System.out.print("Please input one number between 0 to 10000: ");
         Scanner scanner = new Scanner(System.in);
         double input = scanner.nextDouble();
+        int middleput = (int)(input * 1000);
+        if(middleput % 10 > 4){
+            middleput += 10;
+        }
+        middleput /= 10;
+        double output = middleput / 100.0;
+        System.out.println(output);
     }
 }
