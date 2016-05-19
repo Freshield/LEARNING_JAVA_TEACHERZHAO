@@ -7,6 +7,8 @@ public class Test1 {
 
         int x = 1;
 
+
+
         x *= x < 0 ? -1 : 1;
 
 //        int age;
@@ -15,7 +17,13 @@ public class Test1 {
 //            int age;
 //        }
 
-        
+        boolean test = true;
+
+        if ((test = false)) {
+            System.out.println("111");
+        }
+
+
 
     }
 }
