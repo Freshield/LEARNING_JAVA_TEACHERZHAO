@@ -8,6 +8,14 @@ public class Test1 {
         int x = 1;
 
         x *= x < 0 ? -1 : 1;
+
+//        int age;
+//
+//        if (true) {
+//            int age;
+//        }
+
         
+
     }
 }
