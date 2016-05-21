@@ -12,7 +12,8 @@ public class Matrix {
 //        flipHorizontally(sourceMatrix());
 //        flipVertically(sourceMatrix());
 //        rotateRight(sourceMatrix());
-        rotateLeft(sourceMatrix());
+//        rotateLeft(sourceMatrix());
+        match(sourceMatrix());
     }
 
 
@@ -427,6 +428,66 @@ public class Matrix {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 System.out.print(tempMatrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
+
+    }
+
+
+    /*
+     *  .   要求
+     *      消除任意横向或纵向有连续三个相同的非0数据
+     *      并输出
+     *
+     *  .   效果
+     *      matrix
+     *      0 1 2 3
+     *      1 0 0 3
+     *      1 1 1 3
+     *      1 2 3 0
+     *      <<
+     *      0 1 2 0
+     *      0 0 0 0
+     *      0 0 0 0
+     *      0 2 3 0
+     */
+    public static void match(int[][] matrix) {
+        int[][] tempArray = new int[4][4];
+        //init tempArray
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                tempArray[i][j] = 1;
+            }
+        }
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                //for horizontally
+                if (j < 2) {
+                    if ((matrix[i][j] == matrix[i][j+1]) && (matrix[i][j+1] == matrix[i][j+2])) {
+                        tempArray[i][j] = 0;
+                        tempArray[i][j+1] = 0;
+                        tempArray[i][j+2] = 0;
+                    }
+                }
+
+                //for veritically
+                if (i < 2) {
+                    if ((matrix[i][j] == matrix[i+1][j]) && (matrix[i+1][j] == matrix[i+2][j])) {
+                        tempArray[i][j] = 0;
+                        tempArray[i+1][j] = 0;
+                        tempArray[i+2][j] = 0;
+                    }
+                }
+
+            }
+        }
+        //output
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix[i][j]*tempArray[i][j]);
                 System.out.print(" ");
             }
             System.out.print("\n");
