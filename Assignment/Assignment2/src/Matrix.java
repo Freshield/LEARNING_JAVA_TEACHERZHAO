@@ -6,7 +6,9 @@ public class Matrix {
 //        printIcons(sourceMatrix());
 //        fill(sourceMatrix());
 //        rollToRight(sourceMatrix());
-        rollToTop(sourceMatrix());
+//        rollToTop(sourceMatrix());
+//        pushToRight(sourceMatrix());
+        pushToTop(sourceMatrix());
     }
 
 
@@ -181,7 +183,44 @@ public class Matrix {
      *      0 1 2 3
      */
     public static void pushToRight(int[][] matrix) {
+        //find each line not zero number
+        for (int i = 0; i < 4; i++) {
+            //figure the number of not zero number
+            int counter = 0;
+            for (int j = 0; j < 4; j++) {
+                if (matrix[i][j] != 0) {
+                    counter++;
+                }
+            }
+            //push not zero number into array
+            int[] tempArray = new int[counter];
+            counter = 0;
+            for (int j = 0; j < 4; j++) {
+                if (matrix[i][j] != 0) {
+                    tempArray[counter] = matrix[i][j];
+                    counter++;
+                }
+            }
+            //reorgnize matrix
+            int tempCount = 0;
+            for (tempCount = 0; tempCount < 4 - counter; tempCount++) {
+                matrix[i][tempCount] = 0;
+            }
+            counter = 0;
+            for (;tempCount < 4; tempCount++) {
+                matrix[i][tempCount] = tempArray[counter];
+                counter++;
+            }
 
+        }
+        //output
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
     }
 
     /*
@@ -202,6 +241,44 @@ public class Matrix {
      *      0 1 2 3
      */
     public static void pushToTop(int[][] matrix) {
+        //find each line not zero number
+        for (int i = 0; i < 4; i++) {
+            //figure the number of not zero number
+            int counter = 0;
+            for (int j = 0; j < 4; j++) {
+                if (matrix[j][i] != 0) {
+                    counter++;
+                }
+            }
+            //push not zero number into array
+            int[] tempArray = new int[counter];
+            counter = 0;
+            for (int j = 0; j < 4; j++) {
+                if (matrix[j][i] != 0) {
+                    tempArray[counter] = matrix[j][i];
+                    counter++;
+                }
+            }
+            //reorgnize matrix
+            int tempCount = 0;
+            for (tempCount = 0; tempCount < 4 - counter; tempCount++) {
+                matrix[3 - tempCount][i] = 0;
+            }
+            counter = 3 - tempCount;
+            for (;tempCount < 4; tempCount++) {
+                matrix[3 - tempCount][i] = tempArray[counter];
+                counter--;
+            }
+
+        }
+        //output
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
 
     }
 
