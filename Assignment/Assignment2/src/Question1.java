@@ -11,16 +11,17 @@ public class Question1 {
         System.out.println("Please input a number between 0 to 9999: ");
         int input = scanner.nextInt();
 
-        int[] units = new int[4];
+        int unit;
         int divesor = 1000;
         int counter = 4;
+        int digitNumber = 4;
 
         if (input == 0) {
             System.out.println(0);
         } else {
 
             //figure the digit number
-            for (int i = 0; i < units.length; i++) {
+            for (int i = 0; i < digitNumber; i++) {
 
                 if ((input / divesor) != 0){
                     break;
@@ -37,12 +38,12 @@ public class Question1 {
 
             //get the units and output
             for (int i = 0; i < counter; i++) {
-                units[i] = input / divesor;
+                unit = input / divesor;
                 input %= divesor;
                 divesor /= 10;
-                System.out.println(units[i]);
+                System.out.println(unit);
             }
-            
+
         }
     }
 }
