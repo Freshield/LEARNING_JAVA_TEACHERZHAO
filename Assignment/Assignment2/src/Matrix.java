@@ -10,7 +10,9 @@ public class Matrix {
 //        pushToRight(sourceMatrix());
 //        pushToTop(sourceMatrix());
 //        flipHorizontally(sourceMatrix());
-        flipVertically(sourceMatrix());
+//        flipVertically(sourceMatrix());
+//        rotateRight(sourceMatrix());
+        rotateLeft(sourceMatrix());
     }
 
 
@@ -379,6 +381,21 @@ public class Matrix {
      */
     public static void rotateRight(int[][] matrix) {
 
+        int[][] tempMatrix = new int[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                tempMatrix[j][i] = matrix[3 - i][j];
+            }
+        }
+        //output
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(tempMatrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
+
     }
 
     /*
@@ -399,6 +416,21 @@ public class Matrix {
      *      0 1 1 1
      */
     public static void rotateLeft(int[][] matrix) {
+
+        int[][] tempMatrix = new int[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                tempMatrix[j][i] = matrix[i][3 - j];
+            }
+        }
+        //output
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(tempMatrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
 
     }
 }
