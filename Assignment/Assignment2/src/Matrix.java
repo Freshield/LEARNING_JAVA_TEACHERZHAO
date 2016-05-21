@@ -8,7 +8,8 @@ public class Matrix {
 //        rollToRight(sourceMatrix());
 //        rollToTop(sourceMatrix());
 //        pushToRight(sourceMatrix());
-        pushToTop(sourceMatrix());
+//        pushToTop(sourceMatrix());
+        flipHorizontally(sourceMatrix());
     }
 
 
@@ -300,6 +301,23 @@ public class Matrix {
      *      0 3 2 1
      */
     public static void flipHorizontally(int[][] matrix) {
+        //flip
+        for (int i = 0; i < 4; i++) {
+            int temp;
+            for (int j = 0; j < 4 / 2; j++) {
+                temp = matrix[i][j];
+                matrix[i][j] = matrix[i][3 - j];
+                matrix[i][3 - j] = temp;
+            }
+        }
+        //output
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.print("\n");
+        }
 
     }
 
