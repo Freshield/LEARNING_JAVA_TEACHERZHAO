@@ -22,7 +22,6 @@ public class Question2 {
             System.out.println(beforePoint+".000000");
         } else {
             //figure the digit number
-
             for (int i = 0; i < digitNumber; i++) {
 
                 if ((afterPoint % divesor) != 0){
