@@ -104,12 +104,12 @@ public class Matrix {
     public static void rollToRight(int[][] matrix) {
 
         for (int i = 0; i < 4; i++) {
-            int temp = matrix[3][i];
+            int temp = matrix[i][3];
             for (int j = 0; j < 4; j++) {
                 if ((3 - j) != 0) {
-                    matrix[3 - j][i] = matrix[3 - j - 1][i];
+                    matrix[i][3 - j] = matrix[i][3 - j - 1];
                 } else {
-                    matrix[3 - j][i] = temp;
+                    matrix[i][3 - j] = temp;
                 }
 
             }
@@ -143,12 +143,12 @@ public class Matrix {
     public static void rollToTop(int[][] matrix) {
 
         for (int i = 0; i < 4; i++) {
-            int temp = matrix[i][3];
+            int temp = matrix[0][i];
             for (int j = 0; j < 4; j++) {
-                if ((3 - j) != 0) {
-                    matrix[i][3 - j] = matrix[i][3 - j - 1];
+                if (j != 3) {
+                    matrix[j][i] = matrix[j + 1][i];
                 } else {
-                    matrix[i][3 - j] = temp;
+                    matrix[j][i] = temp;
                 }
 
             }
