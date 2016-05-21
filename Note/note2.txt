@@ -1,0 +1,143 @@
+语言
+    编译型
+    源代码 -> 机器指令
+
+    源代码 -> 字节码 -> 机器指令
+                   Runtime
+    JDK Java Development Kit
+        SE EE ME
+    JRE Java Runtime Environment    Flash Player
+    JVM Java Virtual Machine
+环境
+    IDE
+    Eclipse / NetBean / IntelliJ IDEA
+
+
+
+
+HelloWorld
+
+变量 - 声明
+    int a;
+    变量类型 变量名;
+
+变量 - 声明 - 数据格
+
+
+变量 - 类型
+    int long float double char String byte
+    小写 基础类型（原类型）
+    大写 对象类型
+
+变量 - 命名
+    bianLiang
+    numstr
+    numberOfString
+
+变量 - 字面量
+    1
+    1.0
+    "1"
+    '1'
+    0x000
+    0b000
+
+变量 - 不同类型赋值 - 基础类型
+    double <- int
+    int <- double   强制类型转换
+
+    byte < int < long
+            A
+           float < double
+
+I/O - Scanner
+.   Scanner API
+    nextChar();
+.   out API
+    println();
+    print();
+
+运算符 - 算数
+    双目运算符
+    +   -   *   /   %
+    +=  -=  *=  /=  %=
+    ++  --
+
+    /   int 的问题
+    运算符左右类型不一致时，
+    小类型会自动变为大类型
+
+    +=
+    int a = 8.0;
+    a = a + 1;
+    a /= 2;
+    int numberOfStudent = 0;
+    numberOfStudent = numberOfStudent + 1;
+
+    ++
+    a += 1;
+    a++;
+
+运算符 - 优先级
+    ()
+    强制类型转换
+    算数运算符
+    赋值运算符
+
+习惯 - 空格
+    double l = (g * (time * time)) / 2;
+    双目运算符 左右加空格
+    括号外面加，里面不加
+
+表达式
+    变量 + 运算符
+    结果值
+
+
+运算符 - 比较
+    >   <   !=
+    >=  <=  ==
+
+    3 > 5;
+
+
+
+变量 - 类型
+    boolean
+    true
+    false
+
+
+
+if
+.   if
+.   if , else
+.   if , else if , else
+
+int age = 10;
+//...
+if (age < 18) {
+    sout("未成年");
+} else {
+    //
+}
+
+0 < student < 60
+
+0 < student && student < 60 
+
+if ( condition ){
+    statement;
+}
+
+if 缩进
+
+
+if 互换
+
+?:
+
+
+
+
+.
