@@ -1,9 +1,9 @@
 /**
  * Created by FRESHIELD on 2016/5/27.
  */
-public class Math {
+public class Mathematics {
     public static void main(String[] args) {
-        new Math().run();
+        new Mathematics().run();
     }
 
     public void run() {
