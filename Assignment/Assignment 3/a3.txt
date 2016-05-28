@@ -1,0 +1,45 @@
+Part A
+----------------
+继续完成没有写完的 Mathematics
+
+Part B
+----------------
+补充一个知识点
+String str = "Hello";
+
+String str2 = substring(2);
+//  从索引出生成自字符串
+//  str 还是 "Hello"
+//  str2 现在是  "llo";
+
+String str3 = substring(2, 4);
+//  从 2索引处 到 4索引处（不包含4）， 生成中间的子字符串
+//  str 还是 "Hello";
+//  str3 现在是 "ll";
+
+作业，见 String / string.txt
+里面的 Part 2 可以不做
+
+Part C
+----------------
+对比其他人的作业，每个人找3个类文件对比
+位置 Assinment 2 / Share
+
+Part C
+----------------
+写一个五子棋游戏
+详细需求 见 Five / five.txt
+
+
+Part E
+----------------
+阅读 作业 2 的答案
+
+Part F
+----------------
+补之前的作业
+
+
+
+
+.

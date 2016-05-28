@@ -1,0 +1,192 @@
+新建一个类文件，叫 ZString
+Part 1 and 2 都写在这里
+
+依据代码要求写代码
+
+//  Part 1
+String API 只允许使用 length 和 charAt()
+以及在 Part 1 里实现过的函数
+
+uppercaseString(string:String) -> String
+.   要求
+    把所有字母改大写
+
+.   效果
+    "Zhao Zhe"
+    ->  "ZHAO ZHE"
+
+.   约束
+    字符串里可能是任何字符
+
+lowercaseString(string:String) -> String
+.   要求
+    把所有字母改大写
+
+.   效果
+    "Zhao Zhe"
+    ->  "zhao zhe"
+
+.   约束
+    字符串里可能是任何字符
+
+capitalizedString(string:String) -> String
+.   要求
+    如果第一个字符是字母，把它改成大写
+    其它所有字母小写
+
+.   效果
+    "Zhao Zhe"
+    ->  "Zhao zhe"
+
+    " Zhao Zhe"
+    ->  " zhao zhe"
+
+.   约束
+    字符串里可能是任何字符
+
+capitalizedStringAllParts(string:String) -> String
+.   要求
+    把所有的单词首字母大写
+
+.   效果
+    "Zhao Zhe"
+    ->  "Zhao Zhe"
+
+.   约束
+    假设 字符串里只有字母和空格
+    假设 空格不出现在头和尾
+    假设 字符串里也没有任何两个以上连续的空格
+
+hasPrefix(string:String, match:String) -> boolean
+.   要求
+    检查一个字符串是否以另外一个开头
+
+.   效果
+    "Zhao Zhe", "Zh"
+    ->  true
+
+    "Zhao Zhe", " Zh"
+    ->  false
+
+.   约束
+    假设 string 和 match 均不是空字符串
+    字符串里可能是任何字符
+
+.   提示
+    for, ==
+
+.   小心坑
+    string 和 match 的长度 可能
+    有时 string 边长，有时 match 边长
+
+
++   hasSuffix(string:String, match:String) -> boolean
+.   要求
+    检查一个字符串是否以另外一个结尾
+
+.   效果
+    "Zhao Zhe", "he"
+    ->  true
+
+    "Zhao Zhe ", "he"
+    ->  false
+
+.   约束
+    假设 string 和 match 均不是空字符串
+    字符串里可能是任何字符
+
++   isEqualToString(source:String, target:String) -> boolean
+.   要求
+    检查两个字符串是否一致
+
+.   效果
+    "Zhao Zhe", "Zhao Zhe"
+    -> true
+
+.   约束
+    假设 string 和 match 均不是空字符串
+    字符串里可能是任何字符
+
+
++   isCaseInsensitiveEqualToString(source:String, target:String) -> boolean
+.   要求
+    检查两个字符串是否一致，忽略大小写
+
+.   效果
+    "Zhao Zhe", "Zhao Zhe"
+    -> true
+
+    "Zhao Zhe", "zhao zhe"
+    -> true
+
+.   约束
+    假设 source 和 target 均不是空字符串
+    字符串里可能是任何字符
+
++   intValue(string:String) -> int
+.   要求
+    将数字字符串转成整型
+
+.   效果
+    "1234"
+    -> 1234
+
+.   约束
+    假设 string 里只有数字字符，没有空格
+    假设 string 里 至少有 1个字符，最多有 4个字符
+
+
+//  Part 2
+可以使用系统的String API，也可以使用上面写好的
+
++   stringEndWithSeperator(string:String) -> boolean
+.   要求
+    检测一个路径是否以 '/' 结尾
+
+.   效果
+    "/www.zhaozhepublic.com/"
+    ->  true
+
+    "/www.zhaozhepublic.com/java111"
+    ->  false
+
+
++   pathComponents(string:String) -> [String]
+.   要求
+    根据 '/' 拆分路径元素
+
+.   效果
+    "/Users/Zhaozhe/Documents/"
+    -> {"Users", "Zhaozhe", "Documents"}
+
++   lastPathComponent(string:String) -> String
+.   要求
+    返回最有一个路径元素
+
+.   效果
+    "/Users/Zhaozhe/Documents/"
+    -> "Documents"
+
++   stringByAddingSeperator(string:String) -> String
+.   要求
+    如果没有以 '/' 结尾，则增加一个 '/'
+
+.   效果
+    "a"
+    -> "a/"
+
+    "a/"
+    -> "a/"
+
++   stringByAddingComponent(string:String, component:String) -> String
+.   要求
+    增加一个路径元素
+
+.   效果
+    "a" "b"
+    -> "a/b"
+
+    "a/" "b"
+    -> "a/b"
+
+.
