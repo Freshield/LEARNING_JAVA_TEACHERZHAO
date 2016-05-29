@@ -14,7 +14,8 @@ public class ZString {
         System.out.println("Please input some words: ");
         String input = scanner.nextLine();
 //        System.out.println(uppercaseString(input));
-        System.out.println(lowercaseString(input));
+//        System.out.println(lowercaseString(input,0));
+        System.out.println(capitalizedString(input));
     }
 
     public String uppercaseString(String input) {
@@ -31,10 +32,10 @@ public class ZString {
         return output;
     }
 
-    public String lowercaseString(String input) {
+    public String lowercaseString(String input, int begin) {
 
         String output = "";
-        for (int i = 0; i < input.length(); i++) {
+        for (int i = begin; i < input.length(); i++) {
             if (input.charAt(i) >= 'A' && input.charAt(i) <= 'Z') {
                 output += (char)(input.charAt(i)+32);
             } else {
@@ -43,6 +44,21 @@ public class ZString {
         }
 
         return output;
+    }
+
+    public String capitalizedString(String input) {
+        String output = "";
+
+        if (input.charAt(0) >= 'a' && input.charAt(0) <= 'z') {
+            output += (char)(input.charAt(0)-32);
+        } else {
+            output += input.charAt(0);
+        }
+
+        output += lowercaseString(input,1);
+
+        return output;
+
     }
 
 }
