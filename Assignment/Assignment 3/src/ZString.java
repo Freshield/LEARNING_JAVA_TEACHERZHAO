@@ -19,7 +19,8 @@ public class ZString {
 //        System.out.println(capitalizedString(input));
 //        System.out.println(capitalizedStringAllParts(input));
 //        System.out.println(hasPrefix(input,match));
-        System.out.println(hasSuffix(input,match));
+//        System.out.println(hasSuffix(input,match));
+        System.out.println(isEqualToString(input,match));
     }
 
     public String uppercaseString(String input) {
@@ -113,6 +114,24 @@ public class ZString {
                 }
             }
         }
+        return result;
+    }
+
+    public boolean isEqualToString(String source, String target) {
+
+        boolean result = true;
+
+        if (source.length() != target.length()) {
+            result = false;
+        } else {
+            for (int i = 0; i < source.length(); i++) {
+                if (source.charAt(i) != target.charAt(i)) {
+                    result = false;
+                    break;
+                }
+            }
+        }
+
         return result;
     }
 
