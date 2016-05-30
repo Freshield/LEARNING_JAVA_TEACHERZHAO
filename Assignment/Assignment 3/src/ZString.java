@@ -22,7 +22,19 @@ public class ZString {
 //        System.out.println(hasSuffix(input,match));
 //        System.out.println(isEqualToString(input,match));
 //        System.out.println(isCaseInsensitiveEqualToString(input,match));
-        System.out.println(intValue(input));
+//        System.out.println(intValue(input));
+//        System.out.println(stringEndWithSeperator(input));
+
+//        String[] result = pathComponents(input);
+//        for (int i = 0; i < result.length; i++) {
+//            System.out.println(result[i] + i);
+//        }
+
+//        System.out.println(lastPathComponent(input));
+//        System.out.println(stringByAddingSeperator(input));
+
+        String component = scanner.nextLine();
+        System.out.println(stringByAddingComponent(input,component));
     }
 
     public String uppercaseString(String input) {
@@ -169,6 +181,39 @@ public class ZString {
         }
 
         return result;
+    }
+
+    public boolean stringEndWithSeperator(String input) {
+        boolean result = true;
+
+        if (input.charAt(input.length() - 1) != '/') {
+            result = false;
+        }
+
+        return result;
+    }
+
+    public String[] pathComponents(String input) {
+
+        return input.split("/");
+    }
+
+    public String lastPathComponent(String input) {
+        String[] result = input.split("/");
+        return  result[result.length - 1];
+    }
+
+    public String stringByAddingSeperator(String input) {
+        if (input.charAt(input.length() - 1) != '/') {
+            return input += "/";
+        } else {
+            return input;
+        }
+    }
+
+    public String stringByAddingComponent(String first, String second) {
+        first = stringByAddingSeperator(first);
+        return first+second;
     }
 
 }
