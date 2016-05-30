@@ -26,8 +26,8 @@
       <file leaf-file-name="ZString.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ZString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+            <state relative-caret-position="271">
+              <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -576,12 +576,12 @@
       <option name="presentableId" value="Default" />
       <updated>1464563558203</updated>
       <workItem from="1464563561821" duration="1060000" />
-      <workItem from="1464564724020" duration="481000" />
+      <workItem from="1464564724020" duration="1105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1541000" />
+    <option name="totallyTimeSpent" value="2165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="0" width="3216" height="1732" extended-state="0" />
@@ -652,8 +652,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ZString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+        <state relative-caret-position="271">
+          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
           <folding />
         </state>
       </provider>
