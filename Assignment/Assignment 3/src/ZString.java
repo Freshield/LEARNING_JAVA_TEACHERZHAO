@@ -81,7 +81,9 @@ public class ZString {
     }
 
     public String capitalizedStringAllParts(String input) {
-        String output = input.charAt(0)+"";
+
+
+        String output = uppercaseString(input.charAt(0)+"");
 
         for (int i = 1; i < input.length(); i++) {
             if (input.charAt(i-1) == 32 && input.charAt(i) >= 'a' && input.charAt(i) <= 'z') {
@@ -213,7 +215,7 @@ public class ZString {
 
     public String stringByAddingComponent(String first, String second) {
         first = stringByAddingSeperator(first);
-        return first+second;
+        return first + second;
     }
 
 }
