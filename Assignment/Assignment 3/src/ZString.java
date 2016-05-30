@@ -13,10 +13,13 @@ public class ZString {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input some words: ");
         String input = scanner.nextLine();
+        String match = scanner.nextLine();
 //        System.out.println(uppercaseString(input));
 //        System.out.println(lowercaseString(input,0));
 //        System.out.println(capitalizedString(input));
-        System.out.println(capitalizedStringAllParts(input));
+//        System.out.println(capitalizedStringAllParts(input));
+//        System.out.println(hasPrefix(input,match));
+        System.out.println(hasSuffix(input,match));
     }
 
     public String uppercaseString(String input) {
@@ -74,6 +77,43 @@ public class ZString {
         }
 
         return output;
+    }
+
+    public boolean hasPrefix(String input, String match) {
+
+        boolean result = true;
+
+        if (match.length() > input.length()) {
+            result = false;
+        } else {
+            for (int i = 0; i< match.length(); i++) {
+                if (match.charAt(i) != input.charAt(i)) {
+                    result = false;
+                    break;
+                }
+            }
+        }
+        return result;
+    }
+
+    public boolean hasSuffix(String input, String match) {
+
+        boolean result = true;
+        int matchSuffix,inputSuffix;
+
+        if (match.length() > input.length()) {
+            result = false;
+        } else {
+            for (int i = 0; i< match.length(); i++) {
+                matchSuffix = match.length() - i - 1;
+                inputSuffix = input.length() - i - 1;
+                if (match.charAt(matchSuffix) != input.charAt(inputSuffix)) {
+                    result = false;
+                    break;
+                }
+            }
+        }
+        return result;
     }
 
 }
