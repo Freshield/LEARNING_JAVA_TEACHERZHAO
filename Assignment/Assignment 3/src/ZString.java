@@ -13,7 +13,7 @@ public class ZString {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input some words: ");
         String input = scanner.nextLine();
-        String match = scanner.nextLine();
+//        String match = scanner.nextLine();
 //        System.out.println(uppercaseString(input));
 //        System.out.println(lowercaseString(input,0));
 //        System.out.println(capitalizedString(input));
@@ -21,7 +21,8 @@ public class ZString {
 //        System.out.println(hasPrefix(input,match));
 //        System.out.println(hasSuffix(input,match));
 //        System.out.println(isEqualToString(input,match));
-        System.out.println(isCaseInsensitiveEqualToString(input,match));
+//        System.out.println(isCaseInsensitiveEqualToString(input,match));
+        System.out.println(intValue(input));
     }
 
     public String uppercaseString(String input) {
@@ -151,6 +152,20 @@ public class ZString {
                     break;
                 }
             }
+        }
+
+        return result;
+    }
+
+    public int intValue(String input) {
+        int result = 0;
+        int mutiplicator = 1;
+        int inputSuffix;
+
+        for (int i = 0; i < input.length(); i++) {
+            inputSuffix = input.length() - i - 1;
+            result += (input.charAt(inputSuffix) - '0') * mutiplicator;
+            mutiplicator *= 10;
         }
 
         return result;
