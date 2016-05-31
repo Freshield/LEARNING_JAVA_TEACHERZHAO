@@ -21,6 +21,10 @@ public class Player {
         this.hp = hp;
     }
 
+    public int getAtk() {
+        return atk;
+    }
+
     public int getHp() {
         return hp;
     }
