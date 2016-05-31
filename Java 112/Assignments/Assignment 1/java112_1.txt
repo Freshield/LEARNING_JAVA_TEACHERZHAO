@@ -1,0 +1,97 @@
+作业
+
+
+几何处理
+.   包
+    graph
+
+.   补充说明
+    大多数计算机图形界面的坐标系是跟数学坐标系相反
+    如图 Graph.png
+    x 朝右， 但 y 朝下
+
+    很多图形或坐标元素，比如 圆 或 矩形
+    都会有一个 origin 原点
+    这个原点不是图形的中央，而是图形左上角的点
+    比如 图中 圆的origin是 p1，矩形的origin 是 p4
+
+.   类结构
+    Graph
+    +   run()
+    +   run2()
+
+    Point
+    +   x:double
+    +   y:double
+
+    +   description() -> String
+        按格式返回点信息
+        "(2, 3)"
+
+    +   cross()
+        交换当前点的 x y 属性
+        (9, 2) => (2, 9)
+
+    +   flip()
+        当前点 x y 属性取负
+        (9, 2) => (-9, -2)
+
+    +   unitize()
+        如果 x 值是正数 就变成1， 负数就变 -1， 0 就不变
+        y 同理
+        (3, 2) => (1, 1)
+        (-3, 0) => (-1, 0)
+
+    +   distanceToOrigin() -> double
+        返回当前点到原点的距离
+
+    +   distanceTo(x:double, y:double) -> double
+        返回当前点到指定坐标点的距离
+
+    +   distanceTo(target:Point) -> double
+        返回当前点到 target点 的距离
+
+    Circle
+    +   origin:Point
+        原点是圆的左上角的点
+
+    +   radius:double
+        半径
+
+    +   hitTest(target:Point):boolean
+        碰撞检测，target 点是否在 圆里
+
+    +   area():double
+        返回面积
+
+    +   perimeter():double
+        返回周长
+
+    Rectangle
+    +   origin:Point
+        矩形左上角的那个点
+
+    +   width:double
+    +   height:double
+
+    +   hitTest(target:Point):boolean
+        碰撞检测，target 点是否在 矩形里
+
+    +   area():double
+        返回面积
+
+    +   perimeter():double
+        返回周长
+
+.   实现
+    正确性测试
+    创建 Point / Circle / Rectangle / Graph 类
+    实现 Point 里 所有的方法，并在 Graph.run() 里测试
+    实现 Circle 和 Rectangle 里 所有的方法，并在 Graph.run() 里测试
+
+    真实需求
+    依据 Graph.png 图，在 Graph.run2() 里 写测试代码
+    创建 5 个 Point 对象 p1 - p5
+    使用 p1 和 p4 帮助创建图中规格的 Circle 和 Rectangle 对象
+    使用 p2 p3 p5 分别对 circle 和 rectangle 进行碰撞检测，并输出检测结果
+    输出 circle 和 rectangle 的 周长 和 面积
