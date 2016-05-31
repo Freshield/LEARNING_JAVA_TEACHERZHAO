@@ -4,6 +4,7 @@ package com.freshield.five;
  * Created by FRESHIELD on 2016/5/31.
  */
 public class Game {
+
     public void run() {
 
         Player player1 = new Player();
@@ -15,16 +16,6 @@ public class Game {
         player1.token = 'x';
         player2.token = 'o';
 
-        Point point = new Point();
-        point.x = 2;
-        point.y = 3;
-        System.out.println("(" + point.x + ", " + point.y + ")");
-
-        player1.sayHello();
-        player2.sayHello();
-
-        point.trace();
-        System.out.println(point.description());
 
 
 

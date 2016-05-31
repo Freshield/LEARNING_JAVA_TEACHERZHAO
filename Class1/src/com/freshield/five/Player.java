@@ -5,6 +5,14 @@ package com.freshield.five;
  */
 public class Player {
 
+    public Player() {
+        name = "buzhidao";
+    }
+
+    public Player(String name) {
+        this.name = name;
+    }
+
     public String name;
     public char token;
     public int score;

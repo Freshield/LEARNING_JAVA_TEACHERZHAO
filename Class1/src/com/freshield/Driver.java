@@ -5,6 +5,6 @@ package com.freshield;
  */
 public class Driver {
     public static void main(String[] args) {
-        new com.freshield.onlineGame.Game().run();
+        new Graph().run();
     }
 }
