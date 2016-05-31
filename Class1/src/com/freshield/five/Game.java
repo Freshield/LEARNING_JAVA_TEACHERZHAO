@@ -1,3 +1,5 @@
+package com.freshield.five;
+
 /**
  * Created by FRESHIELD on 2016/5/31.
  */
@@ -16,7 +18,7 @@ public class Game {
         Point point = new Point();
         point.x = 2;
         point.y = 3;
-        System.out.println("("+point.x+", "+point.y+")");
+        System.out.println("(" + point.x + ", " + point.y + ")");
 
         player1.sayHello();
         player2.sayHello();
