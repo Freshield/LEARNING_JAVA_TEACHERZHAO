@@ -3,7 +3,15 @@
  */
 public class Point {
 
-    double x;
-    double y;
+    public double x;
+    public double y;
+
+    public void trace() {
+        System.out.println("("+x+", "+y+")");
+    }
+
+    public String description() {
+        return "("+x+", "+y+")";
+    }
 
 }

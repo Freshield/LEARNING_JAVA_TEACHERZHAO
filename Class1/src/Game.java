@@ -21,6 +21,9 @@ public class Game {
         player1.sayHello();
         player2.sayHello();
 
+        point.trace();
+        System.out.println(point.description());
+
 
 
     }
