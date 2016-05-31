@@ -5,8 +5,9 @@ public class Player {
 
     public String name;
     public char token;
+    public int score;
 
-    public void run() {
-
+    public void sayHello() {
+        System.out.println("Hello, "+name);
     }
 }

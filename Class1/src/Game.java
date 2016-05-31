@@ -7,6 +7,21 @@ public class Game {
         Player player1 = new Player();
         Player player2 = new Player();
 
-        
+        player1.name = "XiaoMing";
+        player2.name = "XiaoHong";
+
+        player1.token = 'x';
+        player2.token = 'o';
+
+        Point point = new Point();
+        point.x = 2;
+        point.y = 3;
+        System.out.println("("+point.x+", "+point.y+")");
+
+        player1.sayHello();
+        player2.sayHello();
+
+
+
     }
 }
