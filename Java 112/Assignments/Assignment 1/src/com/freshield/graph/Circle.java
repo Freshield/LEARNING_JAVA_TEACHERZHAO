@@ -8,6 +8,11 @@ public class Circle {
     private Point origin;
     private double radius;
 
+    public Circle(Point origin, double radius) {
+        this.origin = origin;
+        this.radius = radius;
+    }
+
     public boolean hitTest(Point target) {
         return (target.distanceTo(origin) < radius);
     }
@@ -19,5 +24,5 @@ public class Circle {
     public double perimeter() {
         return 2 * radius * Math.PI;
     }
-    
+
 }

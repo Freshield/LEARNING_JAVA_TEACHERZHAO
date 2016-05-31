@@ -7,10 +7,9 @@ public class Graph {
 
     public void run() {
 
-        Point point = new Point();
-        point.setX(-5);
-        point.setY(-3);
-        point.unitize();
+        Point point = new Point(3,5);
+        point.cross();
+        point.flip();
         System.out.println(point.description());
     }
 

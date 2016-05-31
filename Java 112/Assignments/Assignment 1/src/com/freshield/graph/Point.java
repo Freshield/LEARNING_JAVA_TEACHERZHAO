@@ -8,6 +8,11 @@ public class Point {
     private double x;
     private double y;
 
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public double getX() {
         return x;
     }
@@ -35,8 +40,8 @@ public class Point {
     }
 
     public void flip() {
-        x -= -1;
-        y -= -1;
+        x *= -1;
+        y *= -1;
     }
 
     public void unitize() {
