@@ -7,12 +7,13 @@ public class Graph {
 
     public void run() {
 
-        Point point = new Point();
-        point.setX(2);
-        point.setY(3);
-        System.out.println("(" + point.getX() + ", " + point.getY() + ")");
 
-        point.trace();
-        System.out.println(point.description());
+        Circle circle = new Circle();
+        Point origin = new Point(1,2);
+        circle.setOrigin(origin);
+        circle.setRadius(3);
+
+        Point target = new Point(2,3);
+        System.out.println(circle.hitTest(target));
     }
 }

@@ -13,6 +13,7 @@ public class Player {
         this.name = name;
     }
 
+
     public String name;
     public char token;
     public int score;
