@@ -5,6 +5,6 @@ package com.freshield.graph;
  */
 public class Driver {
     public static void main(String[] args) {
-        new Graph().run();
+        new Graph().run2();
     }
 }
