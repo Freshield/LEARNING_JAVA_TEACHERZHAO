@@ -60,23 +60,45 @@ public class Fraction {
     }
 
     public Fraction subtract(Fraction fraction) {
-        return fraction;
+        int resultDenominator = getLCM(denominator,fraction.getDenominator());
+
+        int numeratorAdding = numerator * (resultDenominator / denominator);
+        int numeratorAdded = fraction.numerator * (resultDenominator / fraction.denominator);
+        int resultNumerator = numeratorAdding - numeratorAdded;
+
+        Fraction result = new Fraction(resultNumerator+"/"+resultDenominator);
+        return result;
     }
 
     public Fraction multiply(Fraction fraction) {
-        return fraction;
+        int resultNumberator = numerator * fraction.numerator;
+        int resultDenominator = denominator * fraction.denominator;
+
+        Fraction result = new Fraction(resultNumberator+"/"+resultDenominator);
+        result.simplify();
+        return result;
     }
 
     public Fraction divide(Fraction fraction) {
-        return fraction;
+        int resultNumberator = numerator * fraction.denominator;
+        int resultDenominator = denominator * fraction.numerator;
+
+        Fraction result = new Fraction(resultNumberator+"/"+resultDenominator);
+        result.simplify();
+        return result;
     }
 
     public Fraction copy() {
-        return this;
+        Fraction fraction = new Fraction(numerator+"/"+denominator);
+        return fraction;
     }
 
     public boolean equals(Fraction fraction) {
-        return false;
+        this.simplify();
+        fraction.simplify();
+
+        return (numerator == fraction.numerator && denominator == fraction.denominator) ? true : false;
+
     }
 
     //GCD and LCM
