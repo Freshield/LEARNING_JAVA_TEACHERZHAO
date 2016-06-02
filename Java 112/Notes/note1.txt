@@ -1,0 +1,401 @@
+面向对象概念
+.   问题
+    player问题
+    重名
+    不分类
+
+.   什么是？
+    一个编程思维
+    管理代码结构
+
+.   Benefits
+    代码量减少
+    重复代码量消除
+    面对需求更改时，改代码量减少
+
+.   核心特性
+    封装
+    继承
+    多态
+
+.   基础名词
+    类
+    对象
+    戴尔电脑IX3870
+
+    属性 / 变量 / 字段
+    方法 / 函数 / 消息
+
+面向对象语法
+.   样例
+    改装 Player
+
+.   类
+    包装相关数据声明
+
+.   对象
+    根据类声明，创建一套数据格
+
+.   类声明
+    public class 类名 {
+        public 属性类型 属性名;
+        public 返回值类型 方法名(参数1类型 参数1名,...){
+            //方法的执行代码
+        }
+    }
+
+.   一致
+    一个文件里只能有一个类*
+    类名必须和文件名一致
+
+.   对象创建
+    类名 对象变量 = new 类名();
+
+.   属性声明
+    同类下属性不能重名
+    不同类下，可以起同样的名字
+
+.   使用被管理的数据格
+    对象变量.属性名 = 2;
+    sout(对象变量.属性名)
+
+.   练习：
+    Graph
+    +   run()
+    Point
+    +   x:double
+    +   y:double
+    创建类
+    创建一个对象
+    给属性分别赋值
+    输出格式
+        (2, 3)
+
+    评论
+    Point point = new Point();
+
+    "(" + point.x + ", " + point.y + ")"
+
+.   类命名规范
+    跟变量命名规范一样，首字母大写
+    所有都小写，所有单词首字母大写
+
+面向对象 - 方法封装
+.   样例
+
+.   基于属性
+    和一般函数最大的差别
+    方法是用来操作属性的
+    执行方法的时候，这个属性是被调用对象的属性
+
+.   声明
+    同类下属性不能重名(方法签名)
+    不同类下，可以起同样的名字(方法签名)
+
+.   变量生命周期影响
+    在一个方法里
+    可以使用所有的属性变量
+    和当前方法内的变量(局部变量)
+
+    局部变量(和参数变量) 可以跟属性变量同名
+    声明之后
+    name 就是局部变量
+    this.name 重新获取到属性
+
+.   练习：
+    Point
+    +   trace();
+    +   description():String;
+    声明并实现方法
+    并在Graph里调用成功
+    输出格式
+        "(2, 3)"
+
+方法调用方法
+
+设计原则
+.   单一原则
+    每个方法只干一件事情
+.   微小代码拼装
+
+
+
+包管理
+.   问题
+    两个 Player
+
+.   样例
+
+.   什么是包
+
+.   创建包
+
+.   package
+    每个类上都要写 package
+    package 后面跟包路径
+
+.   import
+    如果一个类使用同包下的类，不用做什么修改
+    如果使用不是一个包下的类，就需要import
+    import 包路径.类名;
+    import 包路径.*;
+
+.   import java.lang.*
+    这个包下的类都是自动导入
+    System / String
+
+.   万一....
+
+
+
+Getter & Setter
+.   问题
+    访问暴露
+
+.   是什么
+    针对属性的访问和赋值的专用方法（一套）
+    取值  getter
+    赋值  setter
+
+.   规范
+    public 属性类型作为返回值类型 getXxxxXxx(){
+        return xxxxXxx;
+    }
+
+    public void setXxxxXxx(属性类型作为参数类型 xxxxXxx){
+        this.xxxxXxx = xxxxXxx;
+    }
+
+.   新结构
+    public class 类名 {
+        private 属性类型 属性名;
+        public 返回值类型 方法名(参数1类型 参数1名,...){
+            //方法的执行代码
+        }
+        public getters & setters
+    }
+
+.   练习
+    Point
+    属性改private
+    提供 getter setter 方法
+    修改 Graph 可以继续访问数据
+
+.   作用
+    不提供 setter 只读属性
+    setter加代码 就是属性赋值保护
+    不提供 setter 也不提供 getter 就是对象内部属性
+
+    封装
+
+    private
+    可以属性 可以方法
+
+.   快捷键
+    private int possession;
+    public void setPossession(int possesion){
+        this.possession = possession;
+    }
+
+
+构造方法
+.   是什么？
+    new 类名();
+    返回值
+
+.   显式声明
+    方法名必须跟类名一样
+    没有返回值类型
+
+.   作用
+    初始化
+
+.   有参初始化
+    方法重载
+
+.   无参自动生成
+    如果不写任何构造方法
+    系统自动生成一个无参构造
+
+    如果写了任何构造方法
+    系统就不自动生成无参构造
+
+
+.   谁该带入构造方法
+
+
+.   练习
+    Point
+    +   Point();
+
+练习
+    Point
+
+    distanceToOrigin() -> double
+    distanceTo(x:double, y:double) -> double
+
+    // (9, 2) => (2, 9)
+    cross()
+
+    // (9, 2) => (-9, -2)
+    flip()
+
+    // (9, 2) => (1, 1)
+    unitize()
+
+    Math.pow(2, 0.5);
+    Math.sqrt(2);
+
+多类多对象
+.   命名不冲突
+
+.   互相调用
+
+.   类关系
+    有 是 能
+    有 -> 属性
+
+
+.   练习
+
+单类多对象
+
+.   练习
+
+
+方法实现技巧
+
+.   基本步骤
+	搞设计 搭架子 填代码
+
+.   搭架子
+	建 类
+	填 属性
+	填 Getter Setter
+	填 构造器
+	架 方法
+	public double area(){
+		return 0;
+	}
+
+.   填代码
+ 	hitTest(target:Point) -> boolean
+ 	你有什么？
+ 		资源？数据
+ 	要干什么？
+ 		责任？任务
+ 	产出什么？
+ 		返回值
+
+.   资源：
+ 		属性变量
+        + circle:Point
+            + x:double
+            + y:double
+        + radius:double
+ 		参数变量
+        + target:Point
+            + x:double
+            + y:double
+ 		局部变量
+        
+
+.   步骤
+    方法，写一条测一条
+
+.   心态
+    实现所有方法就完成了模块要求
+    不要想谁会调用它
+    很有可能有些方法就没有被调用到
+
+    宜家工具盒
+    String
+
+变量声明
+.   基础类型
+
+    局部变量
+    int a;
+    数据格里没有值，使用前必须赋值
+
+    属性
+    private int a;
+    可以只声明不赋值，不赋值是默认值
+
+.   对象类型
+
+    局部变量
+    Point origin;
+    数据格里没有值，使用前必须赋值
+    Point origin = "a";
+    通过检查
+
+    属性
+    private Point origin;
+    可以只声明不赋值，不赋值是 null
+    null 代表空（没有对象）
+
+    private Point origin = new Point(2, 3);
+    声明并提供初始值，很少见
+
+    private Point origin;
+    public getter setter
+    声明但不赋值，但假设使用含有这个属性的对象时，已经通过setter注入属性对象
+    依赖注入
+    circle.setOrigin(point);
+
+.   心态
+    如果想让方法运行正常
+    就必须先进行合理的对象组装
+    circle.setOrigin(point);
+
+值类型和引用类型的区别
+
+.   值
+ 	int a = 3;
+ 	int b = 4;
+ 	a = b;
+ 	a = 5;
+
+.   结构体
+ 	struct Point
+ 	Point p1 = Point(3, 4)
+ 	Point p2 = Point(5, 6)
+ 	p1 = p2
+ 	p1.x = 7;
+
+.   对象
+ 	class Point
+ 	Point p1 = new Point(3, 4)
+ 	Point p2 = new Point(5, 6)
+ 	p1 = p2;
+ 	p1.x = 7;
+
+.   对象与对象变量
+    Point p1 = new Point(3, 4)
+    Point p2 = new Point(5, 6)
+    Point p3 = p2;
+
+
+
+
+ 	Person mingXing = new Person("小明");
+ 	Person shaBi = mingXing;
+
+堆栈结构
+
+.   写方法时
+    开头时只能使用栈里的数据（如果忽略全局区）
+
+.   方法调用时
+    1.	增加 隔板
+    2.	传输 this
+    3.	传输 参数
+
+.   调用结束时
+    1.	去掉 隔板
+    2.	删除 所有变量
+    3.	传输 返回值
+
+
+.

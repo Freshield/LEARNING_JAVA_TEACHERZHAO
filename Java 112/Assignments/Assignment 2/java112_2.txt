@@ -1,0 +1,63 @@
+ 作业
+
+分数处理
+.   包
+    fraction
+
+.   类结构
+    Mathematics
+    +   run()
+
+    Fraction
+    +   numerator:int
+        分子
+
+    +   denominator:int
+        分母
+
+    +   description() -> String
+        按格式返回分数信息
+        "2 / 3"
+
+    +   value() -> double
+        返回分式对应小数值
+        : 2, 3
+        -> 0.6666666667
+
+    +   simplify()
+        简化分式
+        : 4, 6
+        => 修改当前对象自己属性
+        : 2, 3
+
+    +   add(fraction:Fraction) -> Fraction
+        创建一个新的分式对象，返回加法后的分式
+        不修改当前对象属性，也不要修改传参 fraction 对象的属性
+
+    +   subtract(fraction:Fraction) -> Fraction
+        返回减法后的分式
+
+    +   multiply(fraction:Fraction) -> Fraction
+        返回乘法后的分式
+
+    +   divide(fraction:Fraction) -> Fraction
+        返回除法后的分式
+
+    +   copy() -> Fraction
+        创建一个新的分式对象
+        数据跟现有分式对象一样
+
+    +   equals(fraction:Fraction) -> boolean
+        判断两个分式是否相等
+
+    +   (string:String)
+        自定义构造方法
+        根据固定格式字符串，初始化分子分母的值
+        "23/100"
+        =>
+        this : 23, 100
+
+.   实现
+    在 Mathematics.run() 里进行正确性测试
+
+.
