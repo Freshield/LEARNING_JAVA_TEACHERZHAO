@@ -21,5 +21,8 @@ public class LinkedListTest {
 
         list.remove(0);
         System.out.println(list.description());
+
+        list.insert(2,9);
+        System.out.println(list.description());
     }
 }
