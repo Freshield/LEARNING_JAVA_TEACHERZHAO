@@ -1,0 +1,166 @@
+练习 + 作业
+
+.	包
+	collection
+
+.	类结构
+	LinkedListTest
+	+	run()
+
+	LinkedListNode
+	+	nextNode:LinkedListNode
+	+	value:double
+	getters & setters
+	constructors
+	+	()
+	+	(value:double)
+
+	+	copy() -> LinkedListNode
+
+	LinkedList
+	+	headNode:LinkedListNode
+		no getter & setter
+
+	Level 1
+
+	+	buildDemo()
+		Before:
+		buildDemo()
+		After:  6, 7, 3, 8, 4
+		// without using For loop
+		-> [6|-]->[7|-]->[3|-]->[8|-]->[4|/]
+		LLN n1 = new LLN(6);
+		this.headNode = n1;
+
+		LLN n2 = new LLN(7);
+		n1.setNextNode(n2);
+
+		LLN n3 = new LLN(3);
+		n3.setNextNode(n3);
+
+		...
+		...
+
+	+	string() -> String
+		Returned: 	"[1, 2, 5, 8, 2]"
+		Correct: 	[1, 2, 5, 8, 2]
+		Incorrect:	[1, 2, 5, 8, 2, ]
+
+	+	size():int
+
+	+	isEmpty():boolean
+
+	Level 2
+
+	+	get(index:int):double
+		Before:	6, 7, 3, 8, 4
+		get(3)
+		Returned: 8
+		After:	6, 7, 3, 8, 4
+
+	+	lastValue():double
+		Before:	6, 7, 3, 8, 4
+		lastValue()
+		Return: 4
+		After:	6, 7, 3, 8, 4
+
+	+	indexOf(value:double):int
+		Before:	6, 7, 3, 8, 4
+		indexOf(8)			indexOf(2)
+		Return: 3			Return:	-1
+		After:	6, 7, 3, 8, 4
+
+	+	contains(value:double):boolean
+		Before:	6, 7, 3, 8, 4
+		contains(8)
+		Return: true
+		After:	6, 7, 3, 8, 4
+
+	Level 3
+
+	+	add(value:double)
+		Before:	6, 7, 3, 8, 4
+		add(3)
+		After:	6, 7, 3, 8, 4, 3
+
+	+	push(value:double)
+		Before:	6, 7, 3, 8, 4
+		add(3)
+		After:	6, 7, 3, 8, 4, 3
+
+	+	pop():double
+		Before:	6, 7, 3, 8, 4
+		pop()
+		Return: 4
+		After:	6, 7, 3, 8
+
+	Level 4
+
+	+	remove(index:int)
+		Before:	6, 7, 3, 8, 4
+		remove(3)
+		After:	6, 7, 3, 4
+
+	+	insert(index:int, value:double)
+		Before:	6, 7, 3, 8, 4
+		insert(2, 9)
+		After:	6, 7, 9, 3, 8, 4
+
+	+	replace(index:int, value:double)
+		Before:	6, 7, 3, 8, 4
+		replace(2, 9)
+		After:	6, 7, 9, 8, 4
+
+	Level 5
+
+	+	LinkedList(values:double[])
+		LinkedList({3, 8})
+		After:  3, 8
+
+	+	subList(fromIndex:int, toIndex:int):LinkedList
+		Before:	6, 7, 3, 8, 4
+		removeAll(2, 4)
+		Return: <3, 8>
+		After:  6, 7, 3, 8, 4
+
+	+	addAll(list:LinkedList)
+		Before:	6, 7, 3, 8, 4
+		addAll(<3, 5>)
+		After:  6, 7, 3, 8, 4, 3, 5
+
+	+	removeAll()
+		Before:	6, 7, 3, 8, 4
+		removeAll()
+		After:
+
+	Level 6
+
+	+	remove(fromIndex:int, toIndex:int)
+		Before:	6, 7, 3, 8, 4
+		removeAll(2, 4)
+		After:  6, 7, 4
+
+	+	insert(index:int, list:LinkedList)
+		Before: 6, 7, 3, 8, 4
+		insert(2, <9, 5>)
+		After:	6, 7, 9, 5, 3, 8, 4
+
+	+	replace(fromIndex:int, toIndex:int, list:LinkedList)
+		Before:	6, 7, 3, 8, 4
+		replace(2, 4, <6, 9, 1>)
+		After:  6, 7, 6, 9, 1, 4
+
+	Level 7
+
+	+	sort()
+		Before:	6, 7, 3, 8, 4
+		sort()
+		After:  3, 4, 6, 7, 8
+
+	+	shuffle()
+		Before: 6, 7, 3, 8, 4
+		shuffle()
+		After:	4, 3, 7, 8, 6
+
+.   实现
+    在 LinkedListTest.run() 里进行正确性测试
