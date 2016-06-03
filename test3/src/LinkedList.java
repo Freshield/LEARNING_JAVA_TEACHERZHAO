@@ -2,8 +2,15 @@
  * Created by FRESHIELD on 2016/6/3.
  */
 public class LinkedList {
+
     private LinkedListNode headNode;
 
+    //constructor
+
+
+    public LinkedList() {
+
+    }
 
     public void buildDemo() {
         LinkedListNode n1 = new LinkedListNode(6);
@@ -33,17 +40,21 @@ public class LinkedList {
 
         LinkedListNode node = headNode;
 
-        while (true) {
+        if (headNode != null) {
 
-            result += node.getValue();
+            while (true) {
 
-            if (node.getNextNode() != null) {
-                result += ", ";
-                node = node.getNextNode();
-            } else {
-                break;
+                result += node.getValue();
+
+                if (node.getNextNode() != null) {
+                    result += ", ";
+                    node = node.getNextNode();
+                } else {
+                    break;
+                }
             }
         }
+
 
         result += "]";
         return result;
@@ -190,7 +201,51 @@ public class LinkedList {
             }
         }
     }
-    
+
     //level5
+    public LinkedList(double[] values) {
+        headNode = new LinkedListNode(values[0]);
+        LinkedListNode n1 = headNode;
+        LinkedListNode n2;
+
+        for (int i = 1; i < values.length; i++) {
+            n2 = new LinkedListNode(values[i]);
+            n1.setNextNode(n2);
+            n1 = n2;
+        }
+    }
+
+    public LinkedList subList(int fromIndex, int toIndex) {
+        double[] result = new double[toIndex - fromIndex];
+
+        int count = 0;
+        LinkedListNode node = headNode;
+        while (count != toIndex) {
+            if (count == fromIndex) {
+                for (int i = 0; i < result.length; i++) {
+                    result[i] = node.getValue();
+                    node = node.getNextNode();
+                }
+                break;
+            } else {
+                node = node.getNextNode();
+                count++;
+            }
+        }
+        LinkedList list = new LinkedList(result);
+        return list;
+    }
+
+    public void addAll(LinkedList target) {
+        LinkedListNode node = headNode;
+        while (node.getNextNode() != null) {
+            node = node.getNextNode();
+        }
+        node.setNextNode(target.headNode);
+    }
+
+    public void removeAll() {
+        headNode = null;
+    }
 
 }

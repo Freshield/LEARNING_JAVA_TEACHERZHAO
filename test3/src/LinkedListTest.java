@@ -27,5 +27,18 @@ public class LinkedListTest {
 
         list.replace(0,8);
         System.out.println(list.description());
+
+        //level5
+        double[] test = {3,8,7,6,5,4};
+        LinkedList list1 = new LinkedList(test);
+        System.out.println(list1.description());
+
+        System.out.println(list1.subList(2,4).description());
+
+        list1.addAll(list);
+        System.out.println(list1.description());
+
+        list1.removeAll();
+        System.out.println(list1.description());
     }
 }
