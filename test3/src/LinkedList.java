@@ -144,7 +144,6 @@ public class LinkedList {
         }
     }
 
-
     public void insert(int index, double value) {
         int count = 1;
         LinkedListNode newNode = new LinkedListNode(value);
@@ -167,4 +166,31 @@ public class LinkedList {
             }
         }
     }
+
+
+    public void replace(int index, double value) {
+        int count = 1;
+        LinkedListNode newNode = new LinkedListNode(value);
+        LinkedListNode n1 = headNode;
+        LinkedListNode n2 = headNode.getNextNode();
+        if (index == 0) {
+            headNode = newNode;
+            newNode.setNextNode(n2);
+        } else {
+            while (n2 != null) {
+                if (count == index) {
+                    n1.setNextNode(newNode);
+                    newNode.setNextNode(n2.getNextNode());
+                    break;
+                } else {
+                    n1 = n2;
+                    n2 = n2.getNextNode();
+                    count++;
+                }
+            }
+        }
+    }
+    
+    //level5
+
 }

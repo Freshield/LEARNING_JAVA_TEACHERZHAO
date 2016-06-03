@@ -22,7 +22,10 @@ public class LinkedListTest {
         list.remove(0);
         System.out.println(list.description());
 
-        list.insert(2,9);
+        list.insert(0,9);
+        System.out.println(list.description());
+
+        list.replace(0,8);
         System.out.println(list.description());
     }
 }
