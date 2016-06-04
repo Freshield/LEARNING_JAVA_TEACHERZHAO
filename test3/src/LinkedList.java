@@ -248,4 +248,35 @@ public class LinkedList {
         headNode = null;
     }
 
+    public void remove(int fromIndex, int toIndex) {
+        LinkedListNode n1 = headNode;
+        LinkedListNode n2;
+        int count = 0;
+        //get fromindex node
+        while (count < fromIndex - 1) {
+            n1 = n1.getNextNode();
+            count++;
+        }
+
+        System.out.println(count + " : " + n1.getValue());
+        if (fromIndex == 0) {
+            n2 = n1;
+        } else {
+            n2 = n1.getNextNode();
+        }
+        //get toIndex node
+        System.out.println(toIndex - fromIndex);
+        for (int i = 0; i < toIndex - fromIndex; i++) {
+            n2 = n2.getNextNode();
+        }
+        System.out.println(n2.getValue());
+        //link
+        if (fromIndex == 0) {
+            headNode = n2;
+        } else {
+            n1.setNextNode(n2);
+        }
+
+    }
+
 }
