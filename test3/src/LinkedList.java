@@ -248,6 +248,7 @@ public class LinkedList {
         headNode = null;
     }
 
+    //level6
     public void remove(int fromIndex, int toIndex) {
         LinkedListNode n1 = headNode;
         LinkedListNode n2;
@@ -258,18 +259,18 @@ public class LinkedList {
             count++;
         }
 
-        System.out.println(count + " : " + n1.getValue());
+//        System.out.println(count + " : " + n1.getValue());
         if (fromIndex == 0) {
             n2 = n1;
         } else {
             n2 = n1.getNextNode();
         }
         //get toIndex node
-        System.out.println(toIndex - fromIndex);
+//        System.out.println(toIndex - fromIndex);
         for (int i = 0; i < toIndex - fromIndex; i++) {
             n2 = n2.getNextNode();
         }
-        System.out.println(n2.getValue());
+//        System.out.println(n2.getValue());
         //link
         if (fromIndex == 0) {
             headNode = n2;
@@ -277,6 +278,187 @@ public class LinkedList {
             n1.setNextNode(n2);
         }
 
+    }
+
+    public void insert(int index, LinkedList list) {
+        LinkedListNode n1 = headNode;
+        LinkedListNode n2;
+        //get headnode and lastnode
+        LinkedListNode listHeadNode = list.headNode;
+        LinkedListNode listLastNode = listHeadNode;
+        while (listLastNode.getNextNode() != null) {
+            listLastNode = listLastNode.getNextNode();
+        }
+
+        int count = 0;
+
+        if (index == 0) {
+            headNode = listHeadNode;
+            listLastNode.setNextNode(n1);
+        } else {
+            //get the indexnode
+            while (count < index - 1) {
+                n1 = n1.getNextNode();
+                count++;
+            }
+            n2 = n1.getNextNode();
+            n1.setNextNode(listHeadNode);
+            listLastNode.setNextNode(n2);
+        }
+
+
+    }
+
+    public void replace(int fromIndex, int toIndex, LinkedList list) {
+        LinkedListNode n1 = headNode;
+        LinkedListNode n2;
+        //get headnode and lastnode
+        LinkedListNode listHeadNode = list.headNode;
+        LinkedListNode listLastNode = listHeadNode;
+        while (listLastNode.getNextNode() != null) {
+            listLastNode = listLastNode.getNextNode();
+        }
+
+        int count = 0;
+
+        //get fromindex node
+        while (count < fromIndex - 1) {
+            n1 = n1.getNextNode();
+            count++;
+        }
+
+//        System.out.println(count + " : " + n1.getValue());
+        if (fromIndex == 0) {
+            n2 = n1;
+        } else {
+            n2 = n1.getNextNode();
+        }
+        //get toIndex node
+//        System.out.println(toIndex - fromIndex);
+        for (int i = 0; i < toIndex - fromIndex; i++) {
+            n2 = n2.getNextNode();
+        }
+//        System.out.println(n2.getValue());
+        //link
+        if (fromIndex == 0) {
+            headNode = listHeadNode;
+            listLastNode.setNextNode(n2);
+        } else {
+            n1.setNextNode(listHeadNode);
+            listLastNode.setNextNode(n2);
+        }
+    }
+
+    //level7
+    public void sort() {
+        int size = this.size();
+        double[] array = new double[size];
+        double temp;
+
+        LinkedListNode tempNode = headNode;
+        LinkedListNode[] nodes = new LinkedListNode[size];
+        //save nodes
+        for (int i = 0; i < size; i++) {
+            nodes[i] = tempNode;
+            array[i] = tempNode.getValue();
+            tempNode = tempNode.getNextNode();
+        }
+
+//        //test
+//        for (int i = 0; i < size; i++) {
+//            System.out.print(array[i]+" ");
+//        }
+//        System.out.println("");
+//        //test
+//        //test
+//        for (int i = 0; i < size; i++) {
+//            System.out.print(nodes[i].getValue()+" ");
+//        }
+//        System.out.println("");
+//        //test
+
+
+        //bubble
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    //for value
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    //for node
+                    tempNode = nodes[j];
+                    nodes[j] = nodes[j + 1];
+                    nodes[j + 1] = tempNode;
+                }
+            }
+        }
+//
+//
+//        //test
+//        for (int i = 0; i < size; i++) {
+//            System.out.print(array[i]+" ");
+//        }
+//        //test
+//        System.out.println("");
+//        //test
+//        for (int i = 0; i < size; i++) {
+//            System.out.print(nodes[i].getValue()+" ");
+//        }
+//        System.out.println("");
+//        //test
+
+
+        //relink
+        int index;
+        headNode = nodes[0];
+        for (int i = 0; i < size - 1; i++) {
+
+            nodes[i].setNextNode(nodes[i + 1]);
+        }
+        nodes[size - 1].setNextNode(null);
+    }
+
+    public void shuffle() {
+        int size = this.size();
+        double[] array = new double[size];
+        double temp;
+
+        LinkedListNode tempNode = headNode;
+        LinkedListNode[] nodes = new LinkedListNode[size];
+        //save nodes
+        for (int i = 0; i < size; i++) {
+            nodes[i] = tempNode;
+            array[i] = Math.random() * 100;
+            tempNode = tempNode.getNextNode();
+        }
+
+
+        //bubble
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    //for value
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    //for node
+                    tempNode = nodes[j];
+                    nodes[j] = nodes[j + 1];
+                    nodes[j + 1] = tempNode;
+                }
+            }
+        }
+
+
+        //relink
+        int index;
+        headNode = nodes[0];
+        for (int i = 0; i < size - 1; i++) {
+
+            nodes[i].setNextNode(nodes[i + 1]);
+        }
+        nodes[size - 1].setNextNode(null);
     }
 
 }

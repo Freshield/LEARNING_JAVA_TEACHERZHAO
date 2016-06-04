@@ -30,8 +30,11 @@ public class LinkedListTest {
 
         //level5
         double[] test = {3,8,7,6,5,4};
+        double[] test1 = {1,9,2};
         LinkedList list1 = new LinkedList(test);
+        LinkedList list2 = new LinkedList(test1);
         System.out.println(list1.description());
+        System.out.println(list2.description());
 
 //        System.out.println(list1.subList(2,4).description());
 
@@ -41,7 +44,19 @@ public class LinkedListTest {
 //        list1.removeAll();
 //        System.out.println(list1.description());
 
-        list1.remove(2,4);
+//        list1.remove(2,4);
+//        System.out.println(list1.description());
+
+//        list1.insert(2,list2);
+//        System.out.println(list1.description());
+
+        list1.replace(2,4,list2);
+        System.out.println(list1.description());
+
+        list1.sort();
+        System.out.println(list1.description());
+
+        list1.shuffle();
         System.out.println(list1.description());
 
     }
