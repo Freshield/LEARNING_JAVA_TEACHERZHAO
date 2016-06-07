@@ -138,13 +138,7 @@ public class LinkedList {
             return;
         }
 
-        if (headNode == null) {
-            return;
-        }
-
-
         LinkedListNode continueNode = headNode;
-
 
         LinkedListNode removeNode = continueNode.getNextNode();
         if (index == 0){
