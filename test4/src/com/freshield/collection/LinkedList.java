@@ -63,6 +63,11 @@ public class LinkedList {
 
     public double lastValue(){
         LinkedListNode node = headNode;
+
+        if (headNode == null) {
+            return 0;
+        }
+
         while(node.getNextNode() != null){
             node = node.getNextNode();
         }
@@ -98,19 +103,20 @@ public class LinkedList {
     public void add(double value){
         LinkedListNode addNode = new LinkedListNode(value);
         LinkedListNode node = headNode;
-        while(node.getNextNode() != null){
-            node = node.getNextNode();
+
+        if (headNode == null) {
+            headNode = addNode;
+        } else {
+            while(node.getNextNode() != null){
+                node = node.getNextNode();
+            }
+            node.setNextNode(addNode);
         }
-        node.setNextNode(addNode);
+
     }
 
     public void push(double value){
-        LinkedListNode pushNode = new LinkedListNode(value);
-        LinkedListNode node = headNode;
-        while(node.getNextNode() != null){
-            node = node.getNextNode();
-        }
-        node.setNextNode(pushNode);
+        add(value);
     }
 
     public double pop(){
@@ -127,7 +133,19 @@ public class LinkedList {
     }
 
     public void remove(int index){
+
+        if (index <0 || index >= size()) {
+            return;
+        }
+
+        if (headNode == null) {
+            return;
+        }
+
+
         LinkedListNode continueNode = headNode;
+
+
         LinkedListNode removeNode = continueNode.getNextNode();
         if (index == 0){
             headNode = removeNode;
