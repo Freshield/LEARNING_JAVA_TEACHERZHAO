@@ -1,0 +1,38 @@
+Part 1
+----------------------
+1.  修改Linked List Level 5 - 6 的方法
+2.  阅读 Linked List 答案
+3.  尝试抽取共用私有函数
+
+
+Part 2
+----------------------
+对打
+.   包
+    attack
+
+.   类结构
+    Game
+    +   run()
+
+    Player
+    +   name:String
+    +   hp:int
+    +   atk:int
+    +   def:int
+    +   dex:int
+    +   agl:int
+    +   attack(target:Player)
+        使用 Java 111 Question 10 里的公式
+        让当前对象，打 target 对象
+        依据计算的 damage 值，修改 target 的 hp
+
+.   要求
+    构建 Player 类
+    在 Game.run() 里 创建两个 Player 对象，并赋予相关属性值。
+    让两个 Player 对象 轮流互相攻击， 直到其中一个玩家死了，游戏结束，并输出赢家信息
+
+
+
+
+.
