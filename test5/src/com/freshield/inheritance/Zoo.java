@@ -5,22 +5,7 @@ package com.freshield.inheritance;
  */
 public class Zoo {
     public void run(){
-        Animal animal = new Animal();
+        Animal animal = new Human();
         animal.eat();
-
-        Human human = new Human();
-        human.eat();
-        human.work();
-
-        System.out.println("");
-        Animal animal1 = new Human();
-        animal1.eat();
-
-        System.out.println("");
-        Animal ah = new Human();
-        Animal ad = new Dog();
-
-        ah.eat();
-        ad.eat();
     }
 }
