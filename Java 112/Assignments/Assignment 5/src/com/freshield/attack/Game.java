@@ -24,39 +24,41 @@ public class Game {
 
         Player player1 = new Player(name,hp,atk,def,dex,agl);
 
-        System.out.println("Please input the second people's information:");
-        System.out.print("Player2's Name is:");
+        System.out.println("Please input the Sniper's information:");
+        System.out.print("Sniper's Name is:");
         name = scanner.nextLine();
-        System.out.print("Player2's HP is:");
+        System.out.print("Sniper's HP is:");
         hp = Integer.valueOf(scanner.nextLine());
-        System.out.print("Player2's ATK is:");
+        System.out.print("Sniper's ATK is:");
         atk = Integer.valueOf(scanner.nextLine());
-        System.out.print("Player2's DEF is:");
+        System.out.print("Sniper's DEF is:");
         def = Integer.valueOf(scanner.nextLine());
-        System.out.print("Player2's DEX is:");
+        System.out.print("Sniper's DEX is:");
         dex = Integer.valueOf(scanner.nextLine());
-        System.out.print("Player2's AGL is:");
+        System.out.print("Sniper's AGL is:");
         agl = Integer.valueOf(scanner.nextLine());
 
-        Player player2 = new Player(name,hp,atk,def,dex,agl);
+        Sniper player2 = new Sniper(name,hp,atk,def,dex,agl);
 
         int key = 1;
         int hit;
+
+        System.out.println("");
         while (player1.getHp() > 0 && player2.getHp() > 0){
 
             System.out.println("Player1's hp is " + player1.getHp() + " now");
-            System.out.println("Player2's hp is " + player2.getHp() + " now");
+            System.out.println("Sniper's hp is " + player2.getHp() + " now");
 
             if (key == 1){
-                System.out.println("Player1 begin attack Player2");
+                System.out.println("Player1 begin attack Sniper");
                 hit = player1.attack(player2);
-                System.out.println("Player1 hit Player2 by " + hit);
+                System.out.println("Player1 hit Sniper by " + hit);
                 player2.setHp(player2.getHp() - hit);
                 System.out.println("");
             } else {
-                System.out.println("Player2 begin attack Player1");
+                System.out.println("Sniper begin attack Player1");
                 hit = player2.attack(player1);
-                System.out.println("Player2 hit Player1 by " + hit);
+                System.out.println("Sniper hit Player1 by " + hit);
                 player1.setHp(player1.getHp() - hit);
                 System.out.println("");
             }
@@ -64,7 +66,7 @@ public class Game {
         }
 
         if (key == 1){
-            System.out.println("Player2 win, Player2's hp is " + player2.getHp() + " now");
+            System.out.println("Sniper win, Sniper's hp is " + player2.getHp() + " now");
         } else {
             System.out.println("Player1 win, Player1's hp is " + player1.getHp() + " now");
         }
