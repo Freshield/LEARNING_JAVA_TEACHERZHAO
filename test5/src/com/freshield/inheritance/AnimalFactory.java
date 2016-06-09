@@ -5,11 +5,15 @@ package com.freshield.inheritance;
  */
 public class AnimalFactory {
     public Animal createAnimal(String name){
-        if (name.equals("Human")){
-            return new Human();
-        } else if (name.equals("Dog")){
-            return new Dog();
+        String classPath = "com.freshield.inheritance." + name;
+        try {
+            Class<Animal> animalClass = (Class<Animal>) Class.forName(classPath);
+            Animal animal = animalClass.newInstance();
+            return animal;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         return null;
     }
 }
