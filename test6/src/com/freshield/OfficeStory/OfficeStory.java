@@ -8,8 +8,9 @@ public class OfficeStory {
 
         Bathroom bathroom = new Bathroom();
         Manager manager = new Manager(bathroom);
-        Programmer programmer1 = new Programmer(manager,"programmer1");
-        Programmer programmer2 = new Programmer(manager,"programmer2");
+        BathroomMachine bathroomMachine = new BathroomMachine(bathroom);
+        Programmer programmer1 = new Programmer(bathroomMachine,"programmer1");
+        Programmer programmer2 = new Programmer(bathroomMachine,"programmer2");
 
 
         for (int i = 0; i < 10; i++){

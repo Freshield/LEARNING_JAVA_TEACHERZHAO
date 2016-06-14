@@ -3,14 +3,14 @@ package com.freshield.OfficeStory;
 /**
  * Created by FRESHIELD on 2016/6/14.
  */
-public class Manager implements ProgrammerDelegate{
+public class BathroomMachine implements ProgrammerDelegate{
+
     private Bathroom bathroom;
 
-    //constructor
-    public Manager() {
+    public BathroomMachine() {
     }
 
-    public Manager(Bathroom bathroom) {
+    public BathroomMachine(Bathroom bathroom) {
         this.bathroom = bathroom;
     }
 
@@ -24,7 +24,7 @@ public class Manager implements ProgrammerDelegate{
     }
 
     public Bathroom requestForBathromm(Programmer programmer){
-        System.out.println("Manager:Name is " + programmer.getName() + " go to bathroom");
+        System.out.println("BathroomMachine:Name is " + programmer.getName() + " go to bathroom");
         return bathroom;
     }
 }

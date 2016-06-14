@@ -8,6 +8,8 @@ public class Programmer {
     private int capacity = 10;
     private int cups = 0;
     private String name;
+    private BathroomMachine bathroomMachine;
+    private ProgrammerDelegate programmerDelegate;
 
     //constructor
 
@@ -16,12 +18,21 @@ public class Programmer {
 
     }
 
-    public Programmer(Manager manager, String name) {
-        this.manager = manager;
+    public Programmer(ProgrammerDelegate programmerDelegate, String name) {
+        this.programmerDelegate = programmerDelegate;
         this.name = name;
     }
 
     //getter setter
+
+    public BathroomMachine getBathroomMachine() {
+        return bathroomMachine;
+    }
+
+    public void setBathroomMachine(BathroomMachine bathroomMachine) {
+        this.bathroomMachine = bathroomMachine;
+    }
+
     public Manager getManager() {
         return manager;
     }
@@ -60,7 +71,8 @@ public class Programmer {
         this.cups += cups;
         System.out.println("Programmer:Name is " + name + " drink " + cups + " cups");
         if (this.cups >= capacity){
-            manager.requesForBathroom(this).use(this);
+            Bathroom bathroom = programmerDelegate.requestForBathromm(this);
+            bathroom.use(this);
         }
 
     }
