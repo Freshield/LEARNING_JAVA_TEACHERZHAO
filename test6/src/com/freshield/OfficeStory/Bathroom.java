@@ -5,7 +5,9 @@ package com.freshield.OfficeStory;
  */
 public class Bathroom {
 
-    public void use(){
+    public void use(Programmer programmer){
+        System.out.println("Bathroom:Name is " + programmer.getName() + " using bathroom");
+        programmer.setCups(0);
 
     }
 }

@@ -6,7 +6,25 @@ package com.freshield.OfficeStory;
 public class Manager {
     private Bathroom bathroom;
 
-    public Bathroom requesForBathroo(){
+    //constructor
+    public Manager() {
+    }
+
+    public Manager(Bathroom bathroom) {
+        this.bathroom = bathroom;
+    }
+
+    //getter setter
+    public Bathroom getBathroom() {
+        return bathroom;
+    }
+
+    public void setBathroom(Bathroom bathroom) {
+        this.bathroom = bathroom;
+    }
+
+    public Bathroom requesForBathroom(Programmer programmer){
+        System.out.println("Manager:Name is " + programmer.getName() + " go to bathroom");
         return bathroom;
     }
 }
