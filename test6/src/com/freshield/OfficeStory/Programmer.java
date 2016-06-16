@@ -65,8 +65,6 @@ public class Programmer {
         this.name = name;
     }
 
-
-
     public void drink(int cups){
         this.cups += cups;
         System.out.println("Programmer:Name is " + name + " drink " + cups + " cups");
